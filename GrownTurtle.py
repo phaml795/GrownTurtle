@@ -28,12 +28,28 @@ def draw_square():
         t.left(90)
     t.end_fill()
     t.penup()
-
+    
+# Function draw triangle (equilatera)
+def draw_triangle():
+    side_lengths = []
+    for index in range(3):
+        side_length = screen.textinput("side lenght",f"Enter the side length {index + 1} of the square: ")
+        # Convert string data type to float
+        side_length = float(side_length)
+        # Add side_length to the end of array side_lengths
+        side_lengths.append(side_length)
+    # Draw triangle
+    for length in side_lengths:
+        t.forward(length)
+        t.left(120)
+        
 # Main function
 def main():
     shape = screen.textinput("Shapes","Enter the shape to draw (rectangle, circle, square, triangle): ").lower()
     if shape == "square":
         draw_square()
+    elif shape == "triangle":
+        draw_triangle()
     else:
-        print("Invalid shape! Please enter again!")
+        t.write("Invalid shape! Please enter again!")
 main()
