@@ -43,6 +43,35 @@ def draw_triangle():
         t.forward(length)
         t.left(120)
         
+# Function draw circle
+def draw_circle():
+    radius = float(screen.textinput("Circle", "Enter the radius: "))
+    # Draw circle
+    t.begin_fill()
+    t.fillcolor("yellow")
+    t.pencolor("red")
+    t.circle(radius)
+    t.end_fill()
+    t.penup()
+    
+# Function draw rectangle
+def draw_rectangle():
+    width = float(screen.textinput("Rectangle", "Enter the width: "))
+    height = float(screen.textinput("Rectangle", "Enter the height: "))
+
+    # Draw rectangle
+    t.begin_fill()
+    t.fillcolor("blue")
+    t.pencolor("purple")
+
+    for length in range(2):
+        t.forward(width)
+        t.left(90)
+        t.forward(height)
+        t.left(90)
+    t.end_fill()
+    t.penup()
+    
 # Main function
 def main():
     shape = screen.textinput("Shapes","Enter the shape to draw (rectangle, circle, square, triangle): ").lower()
