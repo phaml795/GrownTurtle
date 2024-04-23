@@ -79,6 +79,10 @@ def main():
         draw_square()
     elif shape == "triangle":
         draw_triangle()
+    elif shape == "circle":
+        draw_circle()
+    elif shape == "rectangle":
+        draw_rectangle()
     else:
         t.write("Invalid shape! Please enter again!")
 main()
